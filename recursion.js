@@ -19,6 +19,16 @@ function isEven(n) {
   else return isEven(n - 2);
 }
 
+function factorial(n) {
+  if (n == 1) {
+    return true;
+  } else {
+    return n * factorial(n - 1);
+  }
+}
+
+console.log(factorial(5))
+
 console.log(isEven(50));
 console.log(isEven(75));
 console.log(isEven(-1));

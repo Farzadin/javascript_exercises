@@ -44,17 +44,15 @@ function removeFirst(list) {
   }
 }
 
-function nth(list, number) {
-  function recursive(count, current) {
-    if (current === null) return undefined;
-    if (count === number) return current.value;
-    return recursive(count + 1, current.pointer);
-  }
-  return recursive(0, list.head);
+function nth(list, n) {
+  let current = list.head;
+  if (!current) return undefined;
+  else if (n == 0) return current.value;
+  return nth({ head: current.pointer }, n - 1);
 }
 
 let myList = arrayToList([1, 2, 3]);
-console.log(nth(myList, 2));
+console.log(nth(myList, 0));
 /*
 console.log(myList);
 prepend(0, myList);
